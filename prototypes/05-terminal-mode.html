@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal Mode</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #020c08;
+      color: #a6ffb3;
+      font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .screen {
+      width: min(720px, 90vw);
+      background: #00130c;
+      border: 1px solid #05331d;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+      padding: 18px;
+      border-radius: 12px;
+    }
+    .bar { display: flex; gap: 8px; margin-bottom: 12px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: #ff5f56; box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f; }
+    pre { margin: 0; white-space: pre-wrap; }
+    button {
+      margin-top: 16px;
+      background: #27c93f;
+      color: #00130c;
+      border: none;
+      padding: 10px 14px;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 6px;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(39,201,63,0.4); }
+  </style>
+</head>
+<body>
+  <div class="screen">
+    <div class="bar"><div class="dot"></div></div>
+    <pre>&gt; whoami
+Tim Fin — product systems, TF sketches
+
+&gt; ls highlights/
+- developer_experience.md
+- systems_design.md
+- writing.log
+
+&gt; cat writing.log
+2024-11-29 Shipped a minimal toolkit for teams adopting TensorFlow.
+2024-10-12 Talked about opinionated defaults in platform UX.
+
+&gt; contact
+mailto:hello@timmfin.net
+</pre>
+    <button onclick="alert('Pretend the terminal streamed highlights ✨')">Run all</button>
+  </div>
+</body>
+</html>
