@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>timmfin terminal demo</title>
+  <link rel="stylesheet" href="./node_modules/@xterm/xterm/css/xterm.css" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07090c;
+      --accent: #f25f26;
+      --text: #e8ecf0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 15% 20%, rgba(242, 95, 38, 0.08), transparent 22%),
+                  radial-gradient(circle at 80% 15%, rgba(242, 95, 38, 0.06), transparent 28%),
+                  var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+      padding: 2rem;
+    }
+    .frame {
+      width: min(960px, 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(7, 9, 12, 0.7);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 12px 60px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+    header {
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+      font-size: 0.95rem;
+    }
+    header .brand {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 600;
+    }
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
+    }
+    .pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(242, 95, 38, 0.1);
+    }
+    #terminal-wrapper {
+      padding: 18px;
+    }
+    #terminal {
+      width: 100%;
+      height: 540px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: rgba(232, 236, 240, 0.65);
+      font-size: 0.9rem;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(242, 95, 38, 0.16);
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>timmfin / terminal</span>
+      </div>
+      <a class="pill" href="../index.html">← back to gallery</a>
+    </header>
+    <div id="terminal-wrapper">
+      <div class="meta" aria-live="polite">
+        <span>interactive shell</span>
+        <span aria-hidden="true">•</span>
+        <span>powered by xterm.js</span>
+      </div>
+      <div id="terminal" role="region" aria-label="terminal demo"></div>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
