@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>timmfin.net Prototype Gallery</title>
+  <style>
+    :root {
+      color-scheme: dark light;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      background: #0f1115;
+      color: #f5f5f5;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.08), transparent 25%),
+                  radial-gradient(circle at 90% 90%, rgba(255,255,255,0.05), transparent 30%),
+                  #0f1115;
+    }
+    .gallery {
+      width: min(1100px, 90vw);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    }
+    h1 {
+      margin: 0 0 8px;
+      letter-spacing: 0.01em;
+      font-weight: 700;
+      font-size: clamp(24px, 4vw, 32px);
+    }
+    p {
+      margin: 0 0 24px;
+      color: rgba(245,245,245,0.75);
+    }
+    ol {
+      list-style: decimal-leading-zero;
+      padding-left: 20px;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    a.card {
+      display: block;
+      padding: 14px 16px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      color: #fff;
+      text-decoration: none;
+      height: 100%;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+    a.card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+    }
+    .label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .title {
+      margin-top: 6px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .desc {
+      margin-top: 6px;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .note {
+      margin: 0 0 12px;
+      color: rgba(245,245,245,0.6);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main class="gallery">
+    <h1>timmfin.net / Prototype Gallery</h1>
+    <p>Eleven stark, minimal explorations—including a live xterm.js shell. Each link opens a standalone HTML sketch—ready for GitHub Pages.</p>
+    <p class="note">Publishing source: <code>/pages</code> directory. All assets are self-contained and relative.</p>
+    <ol>
+      <li><a class="card" href="prototypes/01-pure-monochrome-grid.html"><div class="label">01</div><div class="title">Pure Monochrome Grid</div><div class="desc">Black canvas, white 3×3 grid of terse links with pixel-thin underlines.</div></a></li>
+      <li><a class="card" href="prototypes/02-white-page-bold-corners.html"><div class="label">02</div><div class="title">White Page, Bold Corners</div><div class="desc">Inset 1px frame, corner-aligned copy, crisp monochrome inversions.</div></a></li>
+      <li><a class="card" href="prototypes/03-halftone-tensor-symbol.html"><div class="label">03</div><div class="title">Halftone Tensor Symbol</div><div class="desc">Halftone TF monogram on black with vertical CTA stack.</div></a></li>
+      <li><a class="card" href="prototypes/04-split-plane-bw.html"><div class="label">04</div><div class="title">Split-Plane BW</div><div class="desc">Half black, half white canvas with mirrored content blocks.</div></a></li>
+      <li><a class="card" href="prototypes/05-terminal-mode.html"><div class="label">05</div><div class="title">Terminal Mode</div><div class="desc">Green-on-dark prompt narrative with playful command output.</div></a></li>
+      <li><a class="card" href="terminal-xterm/index.html"><div class="label">05+</div><div class="title">Terminal Mode (xterm.js)</div><div class="desc">Live xterm.js shell with fit add-on, starter copy, and back-to-gallery navigation.</div></a></li>
+      <li><a class="card" href="prototypes/06-vector-tf-lattice.html"><div class="label">06</div><div class="title">Vector TF Lattice</div><div class="desc">Thin-line lattice sketching a TF form with floating cards.</div></a></li>
+      <li><a class="card" href="prototypes/07-poster-serif-minimal.html"><div class="label">07</div><div class="title">Poster Serif Minimal</div><div class="desc">Oversized serif headline on warm white with sparse rules.</div></a></li>
+      <li><a class="card" href="prototypes/08-card-stack-on-black.html"><div class="label">08</div><div class="title">Card Stack on Black</div><div class="desc">Outlined cards stacked on true black; expand on hover.</div></a></li>
+      <li><a class="card" href="prototypes/09-kinetic-tf-bars.html"><div class="label">09</div><div class="title">Kinetic TF Bars</div><div class="desc">Minimal perpendicular bars with subtle motion and narrow column.</div></a></li>
+      <li><a class="card" href="prototypes/10-negative-space-signature.html"><div class="label">10</div><div class="title">Negative Space Signature</div><div class="desc">Cut-out TF monogram with orbiting intro and centered nav.</div></a></li>
+    </ol>
+  </main>
+</body>
+</html>

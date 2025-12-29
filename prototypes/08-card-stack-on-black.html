@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Stack on Black</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #000;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+    main { position: relative; width: min(600px, 90vw); height: 380px; }
+    .card {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      padding: 24px;
+      display: grid;
+      gap: 8px;
+      transition: transform 200ms ease, opacity 200ms ease, border-color 200ms ease;
+    }
+    .card:nth-child(1) { transform: translate(0, 0); }
+    .card:nth-child(2) { transform: translate(16px, 12px); opacity: 0.7; }
+    .card:nth-child(3) { transform: translate(32px, 24px); opacity: 0.4; }
+    .card:hover { transform: translate(0,0); opacity: 1; border-color: rgba(255,255,255,0.6); }
+    h2 { margin: 0; letter-spacing: 0.08em; text-transform: uppercase; font-size: 14px; }
+    p { margin: 0; color: rgba(255,255,255,0.74); line-height: 1.6; }
+    a { color: #fff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Ready to collaborate on minimal systems. Reach out.</p>
+      <a href="#">Email</a>
+    </div>
+    <div class="card">
+      <h2>Writing</h2>
+      <p>Notes on developer tooling, TensorFlow UX, and opinionated defaults.</p>
+      <a href="#">View writing</a>
+    </div>
+    <div class="card">
+      <h2>Work</h2>
+      <p>Three selected projects: onboarding kit, design system cuts, and TF visualizer.</p>
+      <a href="#">See work</a>
+    </div>
+  </main>
+</body>
+</html>

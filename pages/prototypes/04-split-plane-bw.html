@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Split-Plane BW</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .panel {
+      padding: 48px;
+      display: grid;
+      align-content: center;
+      gap: 16px;
+      min-height: 100vh;
+    }
+    .left { background: #fff; color: #0e0e0e; }
+    .right { background: #0e0e0e; color: #f4f4f4; }
+    h1 { margin: 0; font-size: 24px; }
+    .tag { letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; opacity: 0.7; }
+    .list { display: grid; gap: 8px; }
+    .list a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.12); padding-bottom: 4px; }
+    .right .list a { border-color: rgba(255,255,255,0.2); }
+    .list a:hover { opacity: 0.6; }
+    .toggle { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: #0e0e0e; color: #fff; border: none; padding: 10px 16px; letter-spacing: 0.08em; cursor: pointer; }
+    body.flipped { grid-template-columns: 1fr 1fr; }
+    body.flipped .left { background: #0e0e0e; color: #f4f4f4; }
+    body.flipped .right { background: #fff; color: #0e0e0e; }
+    body.flipped .toggle { background: #fff; color: #0e0e0e; }
+  </style>
+</head>
+<body>
+  <button class="toggle" onclick="document.body.classList.toggle('flipped')">Flip</button>
+  <section class="panel left">
+    <div class="tag">Narrative</div>
+    <h1>Tim Fin — designing systems</h1>
+    <div class="list">
+      <a href="#">Case studies</a>
+      <a href="#">Writing</a>
+      <a href="#">Talks</a>
+    </div>
+  </section>
+  <section class="panel right">
+    <div class="tag">Signals</div>
+    <div class="list">
+      <div>Based in NYC</div>
+      <div>Systems, developer experience, TF sketches</div>
+      <a href="#">Contact</a>
+      <a href="#">Now</a>
+    </div>
+  </section>
+</body>
+</html>
