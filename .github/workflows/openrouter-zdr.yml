@@ -6,6 +6,8 @@ on:
 jobs:
   fetch-zdr:
     runs-on: ubuntu-latest
+    environment: "Codex ENV"
+    
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
