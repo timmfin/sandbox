@@ -2,11 +2,17 @@ name: Fetch OpenRouter ZDR endpoints
 
 on:
   workflow_dispatch:
+    inputs:
+      debug:
+        description: "Enable debug output (prints response shape and sample endpoints)"
+        required: false
+        default: "false"
 
 jobs:
   fetch-zdr:
     runs-on: ubuntu-latest
-    environment: Codex ENV
+    environment: "Codex ENV"
+    
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -18,5 +24,10 @@ jobs:
 
       - name: Run ZDR fetch script
         env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || vars.OPENROUTER_API_KEY }}
-        run: python fetch_openrouter_zdr.py
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ "${{ inputs.debug }}" = "true" ]; then
+            python fetch_openrouter_zdr.py --debug
+          else
+            python fetch_openrouter_zdr.py
+          fi
