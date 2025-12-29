@@ -1,0 +1,21 @@
+name: Fetch OpenRouter ZDR endpoints
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch-zdr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run ZDR fetch script
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python fetch_openrouter_zdr.py
