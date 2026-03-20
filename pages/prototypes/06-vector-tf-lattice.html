@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vector TF Lattice</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #fdfdfc;
+      color: #0d0d0d;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .lattice {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(120deg, rgba(0,0,0,0.05) 1px, transparent 1px),
+        linear-gradient(210deg, rgba(0,0,0,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.4;
+      mask: radial-gradient(circle at 50% 50%, #000, transparent 70%);
+    }
+    main {
+      position: relative;
+      width: min(900px, 90vw);
+      display: grid;
+      gap: 18px;
+    }
+    h1 { margin: 0; font-size: clamp(24px, 4vw, 36px); }
+    p { margin: 0; max-width: 520px; line-height: 1.6; color: rgba(13,13,13,0.72); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    .card { border: 1px solid rgba(0,0,0,0.1); padding: 14px; background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); }
+    .card h3 { margin: 0 0 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #f47c2b; display: inline-block; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <div class="lattice" aria-hidden="true"></div>
+  <main>
+    <h1>Vector TF Lattice</h1>
+    <p>A thin-line lattice suggests a TF form. Floating cards spotlight active work and TensorFlow exploration.</p>
+    <div class="cards">
+      <div class="card"><h3><span class="dot"></span>Live projects</h3><p>Building onboarding primitives for developer platforms.</p></div>
+      <div class="card"><h3>Lattice notes</h3><p>TF sketches on isometric grids and system diagrams.</p></div>
+      <div class="card"><h3>Signals</h3><p>Now: prototyping minimal dashboards, mentoring teams.</p></div>
+    </div>
+  </main>
+</body>
+</html>
